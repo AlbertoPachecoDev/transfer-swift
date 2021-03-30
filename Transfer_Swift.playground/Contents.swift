@@ -21,7 +21,7 @@
  
  __1. Planteamiento del Problema__: Dado un conjunto de cantidades expresadas en pulgadas, obtener las tres cantidades mas altas ordenadas de mayor a menor, dichas cantidades deben estar expresadas en centímetros y ser inferiores a una límite específico (i.e., 40.0cm).
  
- >__Transferencia:__ Implementar por etapas (_transferencia progresiva/evolutiva_) primero la solución en Swift y posteriormente en Python (_transferencia notacional y algorítmica_) aplicando en lo posible los mismos conceptos básicos y principios.
+ __Transferencia:__ Implementar por etapas  primero la solución en Swift y posteriormente en Python (_transferencia lejana_) aplicando en lo posible los mismos conceptos básicos y principios.
  
  __2. Descomposición:__ Abordaje didáctico y estrategia para resolver el problema:
  
@@ -29,19 +29,19 @@
  
  - _Nivel Intermedio: Metáfora de la "tubería y el flujo de datos"_. Aplicar el procesamiento de datos del nivel anterior a un conjunto de datos.
  
- - _Nivel Avanzado: Modelado basado en Cálculo Lambda y Procesamiento basado en Tuberías (Pipes)_. Realizar en cascada las transformaciones requeridas de tal forma que pueda generalizarse y sea posible <u>transferir</u> más fácilmente la solución para problemas similares (otro tipo de conversiones, filtros, formatos y transformaciones), incluso a otro lenguaje de programación.
-
+ - _Nivel Avanzado: Modelado basado en Cálculo Lambda y Procesamiento basado en Tuberías (Pipes)_. Realizar en cascada las transformaciones requeridas de tal forma que pueda generalizarse y sea posible _transferir_ más fácilmente la solución para problemas similares (otro tipo de conversiones, filtros, formatos y transformaciones), incluso a otro lenguaje de programación.
+ 
  ---
  
-## Nivel 1: Metáfora _"Computación como Calculadora"_
-
- __Planteamiento del Sub-problema:__ Realizar la conversión de una cantidad expresada en pulgadas a centímetros.
+ ### Nivel 1: Metáfora "Computación como Calculadora"
  
- >Entrada: Cantidad numérica para pulgadas\
- Salida: Cantidad numérica para centímetros\
- Proceso: Expresión aritmética para conversión de pulgadas a centímetros (fórmula)
+ __Sub-problema:__ Realizar la conversión de una cantidad expresada en pulgadas a centímetros.
  
- ### Básico: etapa-1
+ - Entrada: Cantidad numérica para pulgadas\
+ - Salida: Cantidad numérica para centímetros\
+ - Proceso: Expresión aritmética para conversión de pulgadas a centímetros (fórmula)
+ 
+ __Básico: etapa-1__
  
  Expresión simple: operadores, variables y constantes con un tipo de dato.
  */
@@ -52,7 +52,8 @@ print("Nivel 1, etapa 1")
 print("\t\(pulg) in = \(cm) cm")
 
 /*:
- ### Básico: etapa-2
+ __Básico: etapa-2__
+ 
  Funciones como mecanismo de descomposición y *abstracción simbólica*
 */
 
@@ -87,7 +88,7 @@ p( pulg, dec2(in2cm(pulg)) )
  
  Using [Closures](https://docs.swift.org/swift-book/LanguageGuide/Closures.html)
  
- ### Intermedio: etapa-3
+ __Intermedio: etapa-3__
  */
 
 let datos = [5.2, 19.6, 3.7, 12.1, 16.5, 9.2]
@@ -97,7 +98,8 @@ for x in datos {
 }
 
 /*:
- ### Intermedio: etapa-4
+ __Intermedio: etapa-4__
+ 
  Extensión de tipos de datos y propiedades calculadas
  */
 
@@ -135,13 +137,14 @@ for x in datos {
 }
 
 /*:
- ## Nivel 3:  Metáfora _"Tuberías"_
+## Nivel 3:  Metáfora _"Tuberías"_
  
  __Programación Funcional__: Modelo basado en Funciones Lambda
- 
- ### Avanzado: etapa-5
+
+ __Avanzado: etapa-5__
  
  Ver. 1: Usando ciclos y funciones:
+
  */
 
 let conv = { (x: Dist) -> String in "\(x.pad(6)) pulg  -> \(x.in2cm.dec2.pad(6)) cm" }
@@ -151,7 +154,7 @@ for x in datos.map(conv) {
 }
 
 /*:
- ### Avanzado: etapa-5
+ __Avanzado: etapa-5__
  
  Ver 2: Usando cerraduras (closures) y algoritmos
 
@@ -167,7 +170,7 @@ print("\tTOP 3 =", r)
 
 
 /*:
- ### Avanzado: etapa-6
+ __Avanzado: etapa-6__
  
  Ver 3: Definiendo función top3()
  */
